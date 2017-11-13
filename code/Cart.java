@@ -38,10 +38,10 @@ public class Cart implements Iterator{
     }
     
     public double getTotal(Cart c){
-        return total;
+        return c.total;
     }
     public int getCount(Cart c){
-        return count;
+        return c.count;
     }
     
     public void deleteItem(Object o){
