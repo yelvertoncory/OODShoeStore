@@ -11,6 +11,7 @@ public class Inventory {
     
     private ArrayList<Product> stock;
     private int last;
+    private float selectedSize;
     
     public Inventory(ArrayList<Product> cStock){
         stock = cStock;
@@ -21,7 +22,7 @@ public class Inventory {
         return stock.get(cUPC);
     }
     
-    public Product removeProduct(int cUPC){
+    public Product removeProduct(int cUPC, float selectedSize){
         Product temp = stock.get(cUPC);
         stock.remove(cUPC);
         return temp;

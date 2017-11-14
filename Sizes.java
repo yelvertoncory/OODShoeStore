@@ -24,6 +24,24 @@ public class Sizes {
         return this.size;
     }
     
+    public String removeQuantity(int numToRemove){
+        String message = "0";
+        if(this.quantity > 0){
+            if(quantity >= numToRemove){
+                message = String.valueOf(numToRemove);
+                quantity -= numToRemove;
+            }
+            else{
+                message = "Requested: " + numToRemove + ", Stock: " + this.quantity;
+            }
+        }
+        else{
+            message = "Currently out of stock on this item";
+        }
+        
+        return message;
+    }
+    
     public int getQuantity(){
         return this.quantity;
     }

@@ -28,6 +28,13 @@ public class Product {
         }
     }
     
+    //This function decrements the quantity of the specified size and
+    //returns a Shoe object with the values of the specified size, this object's
+    //name, this object's color, this object's price, and this object's upc
+    public Shoe removeShoe(float cSize){
+        
+    }
+    
     public String getProductName(){
         return this.name;
     }
