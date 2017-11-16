@@ -17,12 +17,13 @@ public class Product {
     private ArrayList<Sizes> shoeSizes;
     private long upc;
     
-    public Product(String cName, String cColor, String cStyle, float cPrice, int[] cSizes, long cUpc){
+    public Product(String cName, String cColor, String cStyle, double cPrice, int[] cSizes, long cUpc){
         this.name = cName;
         this.color = cColor;
         this.style = cStyle;
         this.price = cPrice;
         this.upc = cUpc;
+        shoeSizes = new ArrayList<Sizes>(20);
         for (int i = 0; i < cSizes.length; i++){
             shoeSizes.add(new Sizes(cSizes[i], 20));
         }
@@ -31,8 +32,8 @@ public class Product {
     //This function decrements the quantity of the specified size and
     //returns a Shoe object with the values of the specified size, this object's
     //name, this object's color, this object's price, and this object's upc
-    public Shoe removeShoe(float cSize){
-        
+    public Shoe pullShoe(float cSize){
+        return new Shoe(this);
     }
     
     public String getProductName(){
@@ -76,4 +77,17 @@ public class Product {
         this.price = newPrice;
     }
     
+    private class Shoe{
+        
+        private String shoeName;
+        private String shoeColor;
+        private float shoeSize;
+        private long shoeUpc;
+        private double shoePrice;
+        
+        private Shoe(Product item){
+            this.shoeName = item.getProductName();
+            System.out.println(this.shoeName);
+        }
+    }
 }
