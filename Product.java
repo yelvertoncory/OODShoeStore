@@ -87,7 +87,9 @@ public class Product {
         
         private Shoe(Product item){
             this.shoeName = item.getProductName();
-            System.out.println(this.shoeName);
+            this.shoeColor = item.getColor();
+            this.shoePrice = item.getPrice();
+            System.out.println("Name: " + this.shoeName + "\nColor: " + this.shoeColor + "\nPrice: $" + this.shoePrice);
         }
     }
 }

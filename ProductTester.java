@@ -14,6 +14,7 @@ public class ProductTester {
         }
         Product myShoe = new Product("Nike Eros", "Aqua Blue", "Running", 59.99, sizes, 15928810);
         myShoe.pullShoe(8);
+        
     }
     
 }
