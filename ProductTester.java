@@ -13,7 +13,7 @@ public class ProductTester {
             sizes[x] = 8 + x;
         }
         Product myShoe = new Product("Nike Eros", "Aqua Blue", "Running", 59.99, sizes, 15928810);
-        myShoe.pullShoe(8);
+        myShoe.pullShoe(8, 1);
         
     }
     
