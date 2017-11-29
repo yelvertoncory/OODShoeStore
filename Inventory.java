@@ -36,4 +36,10 @@ public class Inventory {
         stock.get(cUPC).pullShoe(selectedSize, selectedQuantity);
         return temp;
     }
+    
+    //Make this function add a product back to stock, these items will be added from
+    //the cart when the user decides to remove a product
+    public void addToStock(int cUPC, float shoeSize, int quantity){
+        stock.get(cUPC).incrementQuantity(shoeSize, quantity);
+    }
 }

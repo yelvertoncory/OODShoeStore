@@ -103,9 +103,17 @@ public class Product {
         this.price = newPrice;
     }
     
+    public void incrementQuantity(float shoeSize, int quantity){
+        for(int i = 0; i < shoeSizes.size(); i++){
+            if(shoeSizes.get(i).getSize() == shoeSize){
+                shoeSizes.get(i).setQuantity(shoeSizes.get(i).getQuantity() + quantity);
+            }
+        }
+    }
+    
     //Inner Shoe class used to return Shoe objects (Returned to the cart in this
     //program
-    private class Shoe{
+    public class Shoe{
         
         private String shoeName;
         private String shoeColor;
