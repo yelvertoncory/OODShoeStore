@@ -25,9 +25,13 @@ public class CreditDebitCard implements PaymentInterface{
         this.cvv = "";
     }
 
+    @Override
+    public void takePayment(String accountNumber, double amountCharged){
+        setCardNum(accountNumber);
+    }
+    
     //Stores the required information, entered by the user, in order to
     //carryout a purchase
-    @Override
     public void takePayment(String holderName, String cardNum, String pin, String securityCode){
         setCardHolder(holderName);
         setCardNum(cardNum);
@@ -52,6 +56,10 @@ public class CreditDebitCard implements PaymentInterface{
     
     public void setSecurityCode(String code){
         this.cvv = code;
+    }
+    
+    public void setInformation(String holderName, String pin, String code){
+        
     }
     
     private boolean validateLength(String entry, int length){

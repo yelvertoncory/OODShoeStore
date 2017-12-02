@@ -15,11 +15,11 @@ public class Product {
     private String style;
     private double price;
     private ArrayList<Sizes> shoeSizes;
-    private long upc;
+    private int upc;
     
     //Creates a new product object. The passed cUPC value is used to reference,
     //the index this object is stored at in a data structure.
-    public Product(String cName, String cColor, String cStyle, double cPrice, int[] cSizes, long cUpc){
+    public Product(String cName, String cColor, String cStyle, double cPrice, float[] cSizes, int cUpc){
         this.name = cName;
         this.color = cColor;
         this.style = cStyle;
@@ -41,11 +41,14 @@ public class Product {
         //Creates a Size object that will be used to store the size requested 
         //by the user, and the quantity of said size requested by the user;
         Sizes selectedSize = new Sizes();
+        
         //Boolean value that will be used to return the requested shoe(s) if
         //the size and requested quantity order can be fulfilled.
         boolean result = false;
+        
         //Defines the Shoe object that will be returned.
         Shoe pulledShoe;
+        
         //Searches for the Size object matching the size selected by the user
         //and sets selectedSize to the appropriate size object if it is found
         //and decrements the quantity of the selected size.
@@ -57,8 +60,10 @@ public class Product {
                 result = selectedSize.removeQuantity(cQuantity);
                 }
         }
-        //Returns a new Shoe object requested by the user if the appropriate
-        //quantity was removed in the previous step, returns null otherwise.
+        
+        //Returns a new Shoe object, size and quantity requested by the user,
+        //if the appropriate quantity was removed in the previous step; returns 
+        //null otherwise.
         if(result){
             pulledShoe = new Shoe(this, cSize, cQuantity);
             return pulledShoe;
@@ -84,17 +89,16 @@ public class Product {
         return this.price;
     }
     
-    public long getUpc(){
+    public int getUpc(){
         return this.upc;
     }
     
     //Returns a string variable displaying each of this object's field information
     //on a new line
-    public String displayShoeInfo(){
+    public String getAvailableSizes(){
         String message = "";
         for( Sizes tempShoe: this.shoeSizes){
-            message += "\nSize: " + tempShoe.getSize() + "\nQuantity: " + tempShoe.getQuantity() + "\nUPC: " + this.getUpc();
-            message += "\n";
+            message += "\nSize: " + tempShoe.getSize() + "\nQuantity: " + tempShoe.getQuantity();
         }
         return message;
     }
@@ -111,26 +115,8 @@ public class Product {
         }
     }
     
-    //Inner Shoe class used to return Shoe objects (Returned to the cart in this
-    //program
-    public class Shoe{
-        
-        private String shoeName;
-        private String shoeColor;
-        private float shoeSize;
-        private long shoeUpc;
-        private double shoePrice;
-        private int quantity;
-        
-        //Creates a new Shoe object
-        private Shoe(Product cItem, float cSize, int cQuantity){
-            this.shoeName = cItem.getProductName();
-            this.shoeColor = cItem.getColor();
-            this.shoePrice = cItem.getPrice();
-            this.shoeSize = cSize;
-            this.quantity = cQuantity;
-            //This print line is used for testing purposes only
-            System.out.println("Name: " + this.shoeName + "\nColor: " + this.shoeColor + "\nPrice: $" + this.shoePrice);
-        }
+    public String toString(){
+        return "\nDisplaying Shoe Information... " + "\nName: " + this.getProductName() + "\nColor: " + this.getColor() + "\nStyle: " + this.getStyle() + "\nCost: " + this.getPrice()
+                + "\nUPC: " + this.getUpc() + "\n\nDisplaying Sizes: " + "\n" + this.getAvailableSizes();
     }
 }
