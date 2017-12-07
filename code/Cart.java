@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shoppingcart;
+package oodonlinestoreproject;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 /**
  *
  * @author Cory
  */
-
-
-import java.util.ArrayList;
-import java.util.Iterator;
-
-public class Cart implements Iterator{
-    //keeps a running total of the cost of items in the cart
+public class Cart implements Iterator {
+      //keeps a running total of the cost of items in the cart
     private double total;
     //counts the number of items in the cart
     private int count;
@@ -91,5 +88,4 @@ public class Cart implements Iterator{
             return null;
         }
     }
-    
 }

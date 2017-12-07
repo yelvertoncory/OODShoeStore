@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package OOD_FinalProject_ShoeStore;
+package oodonlinestoreproject;
 
+/**
+ *
+ * @author Cory
+ */
 public class Shoe {
-            
-        private String shoeName;
+      private String shoeName;
         private String shoeColor;
         private float shoeSize;
         private int shoeUpc;

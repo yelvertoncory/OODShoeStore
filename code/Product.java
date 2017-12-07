@@ -1,15 +1,17 @@
 /*
- * Author: Terrell Blakey
- * Date: November 11, 2017
- * Purpose: Creates a Product class that will be used to create product items for
- * an online store application
-*/
-package OOD_FinalProject_ShoeStore;
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package oodonlinestoreproject;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Cory
+ */
 public class Product {
-    
     private String name;
     private String color;
     private String style;
@@ -72,23 +74,24 @@ public class Product {
             return null;
         }
     }
-    
+    //gets the product name
     public String getProductName(){
         return this.name;
     }
     
+    //gets the color
     public String getColor(){
         return this.color;
     }
-    
+    //returns the Style
     public String getStyle(){
         return this.style;
     }
-    
+    //returns the price
     public double getPrice(){
         return this.price;
     }
-    
+    //returns the UPC
     public int getUpc(){
         return this.upc;
     }
@@ -102,11 +105,11 @@ public class Product {
         }
         return message;
     }
-    
+    //sets price for the product
     public void setPrice(double newPrice){
         this.price = newPrice;
     }
-    
+    //adds to the quantity
     public void incrementQuantity(float shoeSize, int quantity){
         for(int i = 0; i < shoeSizes.size(); i++){
             if(shoeSizes.get(i).getSize() == shoeSize){
@@ -114,7 +117,7 @@ public class Product {
             }
         }
     }
-    
+    //prints the product information
     public String toString(){
         return "\nDisplaying Shoe Information... " + "\nName: " + this.getProductName() + "\nColor: " + this.getColor() + "\nStyle: " + this.getStyle() + "\nCost: " + this.getPrice()
                 + "\nUPC: " + this.getUpc() + "\n\nDisplaying Sizes: " + "\n" + this.getAvailableSizes();

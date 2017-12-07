@@ -1,17 +1,15 @@
 /*
- * Author: Terrell Blakey
- * Date: November 12, 2017
- * Purpose: Holds the size of the shoe, as well as the quantity of that particular
- * size that is currently in stock, the color, and the UPC
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package OOD_FinalProject_ShoeStore;
+package oodonlinestoreproject;
 
 /**
  *
- * @author Rell
+ * @author Cory
  */
 public class Sizes {
-    
     private float size;
     private int quantity;
     

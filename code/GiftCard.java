@@ -9,8 +9,8 @@ package oodonlinestoreproject;
  *
  * @author Cory
  */
-public class CreditDebitCard implements PaymentInterface{
-    //Holds the name of the cardholder entered by the user
+public class GiftCard implements PaymentInterface {
+//Holds the name of the cardholder entered by the user
     private String cardHolder;
     //Holds the card number entered by the user
     private String cardNumber;
@@ -19,11 +19,11 @@ public class CreditDebitCard implements PaymentInterface{
     //Holds the security code entered by the user
     private String cvv;
     //3% subcharge for using credit card
-    private double subcharge = .03;
+    private double subcharge = 0;
     //creates balance variable
     private double balance;
     
-    public CreditDebitCard(){
+    public GiftCard(){
         this.cardHolder = "";
         this.cardNumber = "";
         this.pinNumber = "";
@@ -43,30 +43,26 @@ public class CreditDebitCard implements PaymentInterface{
         setPinNumber(pin);
         setSecurityCode(securityCode);
     }
-    //Strategy Pattern: takes the balance and adds a subcharge
+    
    public double calculateTotal(double balance){
     balance = balance * (1 + subcharge);
     return balance;
    }
-   
-   //sets the CardHolder
     public void setCardHolder(String name){
         this.cardHolder = name;
     }
     
-    //Sets the cardNumber if the card is validated
     public void setCardNum(String number){
         boolean result = validateCardNumber(number, 16);
         if(result){
             this.cardNumber = number;
         }
     }
-    //sets the PIN number for the card
+    
     public void setPinNumber(String pin){
         this.pinNumber = pin;
     }
     
-    //sets the security code
     public void setSecurityCode(String code){
         this.cvv = code;
     }
@@ -75,14 +71,12 @@ public class CreditDebitCard implements PaymentInterface{
         
     }
     
-    //validates length
     private boolean validateLength(String entry, int length){
         boolean result = false;
         result = entry.length() == length;
         return result;
     }
     
-    //checks to see the input are numbers
     private boolean validateAreNumbers(String entry){
         boolean result = true;
         for(int i = 0; i < entry.length(); i++){
@@ -92,7 +86,7 @@ public class CreditDebitCard implements PaymentInterface{
         }
         return result;
     }
-    //returns true if the value is the proper length and the entry is numbers
+    
     private boolean validateCardNumber(String entry, int length){
         boolean result = false;
         if(validateLength(entry, length)){
@@ -102,4 +96,5 @@ public class CreditDebitCard implements PaymentInterface{
         }
         return result;
     }
+    
 }

@@ -1,14 +1,17 @@
 /*
- * Author: Terrell Blakey
- * Date: November 12, 2017
- * Purpose: Creates an inventory class to hold an array list of products
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package OOD_FinalProject_ShoeStore;
+package oodonlinestoreproject;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Cory
+ */
 public class Inventory {
-    
     private ArrayList<Product> stock;
     private float selectedSize;
     private int selectedQuantity;
